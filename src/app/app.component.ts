@@ -15,9 +15,8 @@ export class AppComponent {
     private movieService: MovieService
   ){
     this.movieService.getMovies()
-    .subscribe(data => {
-      const query: any = data;
-      this.movies = query.results;
+    .subscribe((data: any) => {
+      this.movies = data.results;
     });
   }
 
